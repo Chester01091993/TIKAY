@@ -1,0 +1,370 @@
+/* ===== UTILIDADES CSS CENTRALIZADAS - TEMA RÚSTICO ===== */
+
+/* Efectos de backdrop-filter centralizados */
+.backdropBlur {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background: rgba(245, 230, 211, 0.8);
+  border: var(--border-wood);
+}
+
+/* Botones rústicos */
+.btnPrimary {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--text-cream);
+  border: var(--border-wood);
+  padding: 14px 28px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+  font-family: 'Georgia', serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  box-shadow: var(--shadow-soft);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.btnPrimary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btnPrimary:hover::before {
+  left: 100%;
+}
+
+.btnPrimary:hover {
+  background: linear-gradient(135deg, var(--earth-brown), var(--primary-color));
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--earth-brown);
+}
+
+.btnSecondary {
+  background: transparent;
+  color: var(--primary-color);
+  border: var(--border-wood);
+  padding: 12px 26px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+  font-family: 'Georgia', serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--shadow-soft);
+}
+
+.btnSecondary:hover {
+  background: var(--primary-color);
+  color: var(--text-cream);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-medium);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Tarjetas rústicas */
+.card {
+  background: var(--bg-warm);
+  border: var(--border-wood);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+  overflow: hidden;
+  position: relative;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-gold), var(--secondary-color));
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--earth-brown);
+}
+
+.cardGlass {
+  background: rgba(245, 230, 211, 0.9);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius);
+  border: var(--border-cream);
+  transition: var(--transition);
+  box-shadow: var(--shadow-soft);
+}
+
+.cardGlass:hover {
+  background: rgba(245, 230, 211, 0.95);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Títulos de sección rústicos */
+.sectionTitle {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  position: relative;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  text-shadow: 3px 3px 6px rgba(139, 69, 19, 0.2);
+  letter-spacing: 2px;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-gold), var(--secondary-color));
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
+}
+
+.sectionSubtitle {
+  font-size: 1.3rem;
+  color: var(--text-medium);
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+/* Contenedores rústicos */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 100px 0;
+  min-height: 100vh;
+  background: var(--bg-light);
+  position: relative;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(139, 69, 19, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(160, 82, 45, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Grid responsivo */
+.grid {
+  display: grid;
+  gap: 40px;
+}
+
+.grid2 {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.grid3 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid4 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Flexbox utilities */
+.flex {
+  display: flex;
+}
+
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Espaciado */
+.gap10 { gap: 10px; }
+.gap15 { gap: 15px; }
+.gap20 { gap: 20px; }
+.gap30 { gap: 30px; }
+.gap40 { gap: 40px; }
+
+/* Texto rústico */
+.textCenter { text-align: center; }
+.textLeft { text-align: left; }
+.textRight { text-align: right; }
+
+.textPrimary { color: var(--primary-color); }
+.textSecondary { color: var(--secondary-color); }
+.textAccent { color: var(--accent-color); }
+.textGold { color: var(--accent-gold); }
+.textDark { color: var(--text-dark); }
+.textMedium { color: var(--text-medium); }
+.textLight { color: var(--text-light); }
+.textCream { color: var(--text-cream); }
+
+/* Animaciones rústicas */
+.fadeIn {
+  animation: fadeInRustic 0.8s ease-out;
+}
+
+.slideInLeft {
+  animation: slideInFromLeftRustic 0.8s ease-out;
+}
+
+.slideInRight {
+  animation: slideInFromRightRustic 0.8s ease-out;
+}
+
+@keyframes fadeInRustic {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeftRustic {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRightRustic {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Efectos rústicos adicionales */
+.rustic-shadow {
+  box-shadow: var(--shadow-soft);
+}
+
+.rustic-shadow-medium {
+  box-shadow: var(--shadow-medium);
+}
+
+.rustic-shadow-strong {
+  box-shadow: var(--shadow-strong);
+}
+
+.rustic-border {
+  border: var(--border-wood);
+  border-radius: var(--border-radius);
+}
+
+.rustic-border-thick {
+  border: 3px solid var(--primary-color);
+  border-radius: var(--border-radius-large);
+}
+
+.wood-texture {
+  background-image: 
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(139, 69, 19, 0.05) 20%,
+      rgba(139, 69, 19, 0.1) 50%,
+      rgba(139, 69, 19, 0.05) 80%,
+      transparent 100%
+    );
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+  
+  .sectionTitle {
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+  }
+  
+  .sectionSubtitle {
+    font-size: 1.2rem;
+  }
+  
+  .grid2,
+  .grid3,
+  .grid4 {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .btnPrimary,
+  .btnSecondary {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 2.2rem;
+  }
+  
+  .sectionSubtitle {
+    font-size: 1.1rem;
+  }
+  
+  .btnPrimary,
+  .btnSecondary {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+} 

@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  line-height: 1.8;
+  color: var(--text-dark);
+  background: var(--bg-light);
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(139, 69, 19, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(160, 82, 45, 0.03) 0%, transparent 50%);
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Georgia', serif;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Georgia', serif;
+  transition: var(--transition);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+input, select, textarea {
+  font-family: 'Georgia', serif;
+  border: var(--border-wood);
+  border-radius: var(--border-radius);
+  padding: 12px 16px;
+  background: var(--bg-warm);
+  color: var(--text-dark);
+  transition: var(--transition);
+  box-shadow: var(--shadow-soft);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-medium);
+  background: var(--bg-light);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* Estilos para enlaces */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+  font-family: 'Georgia', serif;
+}
+
+a:hover {
+  color: var(--accent-gold);
+  text-shadow: 1px 1px 2px rgba(218, 165, 32, 0.3);
+}
+
+/* Estilos para títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Georgia', serif;
+  color: var(--text-dark);
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.1);
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2.8rem;
+  margin-bottom: 18px;
+}
+
+h3 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+h4 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+h5 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+h6 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+/* Estilos para párrafos */
+p {
+  font-family: 'Georgia', serif;
+  line-height: 1.8;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+/* Estilos para listas */
+ul, ol {
+  font-family: 'Georgia', serif;
+  color: var(--text-dark);
+  line-height: 1.8;
+  margin-bottom: 15px;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* Estilos para tablas */
+table {
+  font-family: 'Georgia', serif;
+  border-collapse: collapse;
+  width: 100%;
+  background: var(--bg-warm);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  border: var(--border-wood);
+}
+
+th, td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(139, 69, 19, 0.1);
+}
+
+th {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--text-cream);
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+tr:hover {
+  background: rgba(139, 69, 19, 0.05);
+}
+
+/* Estilos para formularios */
+form {
+  font-family: 'Georgia', serif;
+}
+
+label {
+  font-family: 'Georgia', serif;
+  color: var(--text-dark);
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Estilos para scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-warm);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+  border-radius: 6px;
+  border: 2px solid var(--bg-warm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--earth-brown), var(--primary-color));
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .App {
+    font-size: 16px;
+  }
+  
+  h1 {
+    font-size: 2.8rem !important;
+    letter-spacing: 1px;
+  }
+  
+  h2 {
+    font-size: 2.2rem !important;
+    letter-spacing: 1px;
+  }
+
+  h3 {
+    font-size: 1.8rem !important;
+  }
+
+  input, select, textarea {
+    padding: 10px 14px;
+    font-size: 16px; /* Evita zoom en iOS */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.2rem !important;
+  }
+  
+  h2 {
+    font-size: 1.8rem !important;
+  }
+
+  h3 {
+    font-size: 1.5rem !important;
+  }
+
+  input, select, textarea {
+    padding: 8px 12px;
+  }
+} 

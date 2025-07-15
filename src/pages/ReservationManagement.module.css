@@ -1,0 +1,163 @@
+.reservationManagementPage {
+  min-height: 100vh;
+  background: var(--bg-light);
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(139, 69, 19, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(160, 82, 45, 0.05) 0%, transparent 50%);
+  padding: 20px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: var(--text-dark);
+}
+
+/* Header de la página rústico */
+.pageHeader {
+  background: var(--bg-warm);
+  border-radius: var(--border-radius-large);
+  padding: 40px;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow-medium);
+  border: var(--border-wood);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.pageHeader::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-gold), var(--secondary-color));
+}
+
+.pageHeader h1 {
+  margin: 0 0 15px 0;
+  color: var(--text-dark);
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: 'Georgia', serif;
+  text-shadow: 3px 3px 6px rgba(139, 69, 19, 0.2);
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+.pageHeader p {
+  margin: 0;
+  color: var(--text-medium);
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+}
+
+/* Botón de regreso rústico */
+.backButton {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--text-cream);
+  border: var(--border-wood);
+  padding: 14px 24px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-family: 'Georgia', serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition);
+  box-shadow: var(--shadow-medium);
+  z-index: 1000;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.backButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.backButton:hover::before {
+  left: 100%;
+}
+
+.backButton:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-strong);
+  background: linear-gradient(135deg, var(--earth-brown), var(--primary-color));
+  border-color: var(--earth-brown);
+}
+
+.backButton i {
+  font-size: 1.1rem;
+  transition: var(--transition);
+}
+
+.backButton:hover i {
+  transform: translateX(-3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .reservationManagementPage {
+    padding: 15px;
+  }
+  
+  .pageHeader {
+    padding: 30px 25px;
+    margin-bottom: 25px;
+  }
+  
+  .pageHeader h1 {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+  }
+  
+  .pageHeader p {
+    font-size: 1.1rem;
+  }
+  
+  .backButton {
+    top: 15px;
+    left: 15px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageHeader {
+    padding: 25px 20px;
+  }
+  
+  .pageHeader h1 {
+    font-size: 2rem;
+  }
+  
+  .pageHeader p {
+    font-size: 1rem;
+  }
+  
+  .backButton {
+    top: 10px;
+    left: 10px;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+} 

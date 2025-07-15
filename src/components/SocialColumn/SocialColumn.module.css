@@ -1,0 +1,113 @@
+.socialColumn {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: rgba(245, 230, 211, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 20px 15px;
+  border-radius: var(--border-radius-large);
+  border: var(--border-wood);
+  box-shadow: var(--shadow-medium);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.socialColumn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-gold), var(--secondary-color));
+}
+
+.socialColumn:hover {
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: var(--shadow-strong);
+  border-color: var(--earth-brown);
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 2rem;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  border: 2px solid transparent;
+}
+
+.socialLink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(139, 69, 19, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.socialLink:hover::before {
+  left: 100%;
+}
+
+.socialLink:hover {
+  transform: translateY(-3px) scale(1.1);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-soft);
+}
+
+.socialLink i {
+  z-index: 1;
+  position: relative;
+  text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .socialColumn {
+    left: 10px;
+    padding: 15px 12px;
+    gap: 12px;
+  }
+
+  .socialLink {
+    width: 50px;
+    height: 50px;
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .socialColumn {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    top: auto;
+    transform: translateX(-50%);
+    flex-direction: row;
+    border-radius: var(--border-radius-large);
+    padding: 15px 20px;
+  }
+
+  .socialColumn:hover {
+    transform: translateX(-50%) scale(1.05);
+  }
+} 

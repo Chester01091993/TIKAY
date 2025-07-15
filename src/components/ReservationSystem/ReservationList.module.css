@@ -1,0 +1,507 @@
+.reservationList {
+  background: linear-gradient(135deg, #F5F5DC, #F0E68C);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 32px rgba(139, 69, 19, 0.2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: 2px solid #DAA520;
+}
+
+/* Header de la lista */
+.listHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #DAA520;
+}
+
+.listHeader h3 {
+  margin: 0;
+  color: #8B4513;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.listStats {
+  display: flex;
+  gap: 20px;
+}
+
+.listStats .stat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #8B4513;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.listStats .stat i {
+  color: #D2691E;
+}
+
+/* Controles de la lista */
+.listControls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.searchBox {
+  flex: 1;
+  min-width: 250px;
+  position: relative;
+}
+
+.searchBox i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8B4513;
+}
+
+.searchBox input {
+  width: 100%;
+  padding: 10px 15px 10px 40px;
+  border: 2px solid #DAA520;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #F5F5DC, #F0E68C);
+}
+
+.searchBox input:focus {
+  outline: none;
+  border-color: #8B4513;
+  box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+}
+
+.filterControls {
+  display: flex;
+  gap: 10px;
+}
+
+.filterSelect,
+.sortSelect {
+  padding: 10px 15px;
+  border: 2px solid #DAA520;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #F5F5DC, #F0E68C);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #8B4513;
+}
+
+.filterSelect:focus,
+.sortSelect:focus {
+  outline: none;
+  border-color: #8B4513;
+  box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+}
+
+/* Estado vacío */
+.emptyState {
+  text-align: center;
+  padding: 40px 20px;
+  color: #8B4513;
+}
+
+.emptyState i {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #A0522D;
+}
+
+.emptyState p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Contenedor de reservas */
+.reservationsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Tarjeta de reserva */
+.reservationCard {
+  background: linear-gradient(135deg, #F5F5DC, #F0E68C);
+  border: 2px solid #DAA520;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.reservationCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(218, 165, 32, 0.3);
+  border-color: #8B4513;
+  background: linear-gradient(135deg, #F0E68C, #F5F5DC);
+}
+
+/* Header de la reserva */
+.reservationHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #DAA520;
+}
+
+.reservationTime {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: #8B4513;
+  font-size: 1.1rem;
+}
+
+.reservationTime i {
+  color: #D2691E;
+}
+
+.reservationStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.statusDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.statusDot.green {
+  background: linear-gradient(135deg, #228B22, #32CD32);
+}
+
+.statusDot.orange {
+  background: linear-gradient(135deg, #FF8C00, #FFA500);
+}
+
+.statusDot.red {
+  background: linear-gradient(135deg, #DC143C, #B22222);
+}
+
+.statusDot.gray {
+  background: linear-gradient(135deg, #A0522D, #8B4513);
+}
+
+/* Información de la reserva */
+.reservationInfo {
+  margin-bottom: 15px;
+}
+
+.customerInfo {
+  margin-bottom: 15px;
+}
+
+.customerName {
+  margin: 0 0 10px 0;
+  color: #8B4513;
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vipBadge {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: #8B4513;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-transform: uppercase;
+  border: 1px solid #FFA500;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.contactInfo span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #A0522D;
+  font-size: 0.9rem;
+}
+
+.contactInfo i {
+  color: #D2691E;
+  width: 14px;
+}
+
+/* Detalles de la reserva */
+.reservationDetails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #8B4513;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.detailItem i {
+  color: #D2691E;
+  width: 14px;
+}
+
+/* Solicitudes especiales */
+.specialRequests {
+  background: linear-gradient(135deg, #FFE4B5, #FFDAB9);
+  border: 2px solid #DAA520;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.specialRequests i {
+  color: #FF8C00;
+  margin-top: 2px;
+}
+
+.specialRequests span {
+  color: #8B4513;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Acciones de la reserva */
+.reservationActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #DAA520;
+}
+
+.statusActions {
+  flex: 1;
+}
+
+.statusSelect {
+  padding: 8px 12px;
+  border: 2px solid #DAA520;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #F5F5DC, #F0E68C);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  color: #8B4513;
+}
+
+.statusSelect:focus {
+  outline: none;
+  border-color: #8B4513;
+  box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+}
+
+.actionButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.editButton,
+.deleteButton {
+  background: none;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+}
+
+.editButton {
+  color: #4682B4;
+}
+
+.editButton:hover {
+  background: rgba(70, 130, 180, 0.1);
+  color: #5F9EA0;
+}
+
+.deleteButton {
+  color: #DC143C;
+}
+
+.deleteButton:hover {
+  background: rgba(220, 20, 60, 0.1);
+  color: #B22222;
+}
+
+/* Metadatos de la reserva */
+.reservationMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #A0522D;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.createdAt,
+.updatedAt {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Footer de la lista */
+.listFooter {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #DAA520;
+}
+
+.footerStats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #8B4513;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .reservationList {
+    padding: 20px;
+  }
+  
+  .listHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .listStats {
+    gap: 15px;
+  }
+  
+  .listControls {
+    flex-direction: column;
+  }
+  
+  .searchBox {
+    min-width: auto;
+  }
+  
+  .filterControls {
+    justify-content: space-between;
+  }
+  
+  .filterSelect,
+  .sortSelect {
+    flex: 1;
+  }
+  
+  .reservationHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .reservationActions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .statusActions {
+    width: 100%;
+  }
+  
+  .statusSelect {
+    width: 100%;
+  }
+  
+  .actionButtons {
+    align-self: flex-end;
+  }
+  
+  .reservationMeta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .footerStats {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reservationList {
+    padding: 15px;
+  }
+  
+  .reservationCard {
+    padding: 15px;
+  }
+  
+  .customerName {
+    font-size: 1.1rem;
+  }
+  
+  .reservationDetails {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .contactInfo span {
+    font-size: 0.8rem;
+  }
+  
+  .detailItem {
+    font-size: 0.8rem;
+  }
+  
+  .specialRequests {
+    padding: 10px;
+  }
+  
+  .specialRequests span {
+    font-size: 0.8rem;
+  }
+} 

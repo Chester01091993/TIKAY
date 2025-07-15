@@ -1,0 +1,353 @@
+.reservationSection {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  min-height: 100vh;
+}
+
+.reservationContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.reservationHeader {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.reservationTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.reservationTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 2px;
+}
+
+.reservationSubtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.reservationContent {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+.reservationForm {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--border-radius);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+.formGroup input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.submitButton {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: var(--border-radius);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.submitButton:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.reservationInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.infoCard {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.infoCard:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+.infoCard i {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.infoCard h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.infoCard p {
+  margin: 5px 0;
+  opacity: 0.9;
+}
+
+.reservasList {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.reservasList h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.reservasGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.reservaCard {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+.reservaHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.reservaHeader h4 {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.deleteButton {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleteButton:hover {
+  background: #e74c3c;
+  transform: scale(1.1);
+}
+
+.reservaDetails p {
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.reservaDetails i {
+  color: var(--primary-color);
+  width: 16px;
+}
+
+.reservaMensaje {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.reservaMensaje p {
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.notification {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  z-index: 10000;
+  animation: slideInRight 0.3s ease-out;
+}
+
+.notification.success {
+  background: #27ae60;
+  color: white;
+}
+
+.notification.error {
+  background: #e74c3c;
+  color: white;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .reservationSection {
+    padding: 60px 0;
+  }
+
+  .reservationTitle {
+    font-size: 2.5rem;
+  }
+
+  .reservationSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .reservationContent {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .reservationForm {
+    padding: 20px;
+  }
+
+  .infoCard {
+    padding: 20px;
+  }
+
+  .infoCard i {
+    font-size: 2rem;
+  }
+
+  .reservasGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .notification {
+    right: 10px;
+    left: 10px;
+    top: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reservationTitle {
+    font-size: 2rem;
+  }
+
+  .reservationForm {
+    padding: 15px;
+  }
+
+  .submitButton {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+} 

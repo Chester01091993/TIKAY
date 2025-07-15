@@ -1,0 +1,136 @@
+/* Importar utilidades centralizadas */
+@import './styles/utils.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  line-height: 1.6;
+  color: #2d1810;
+  background-color: #faf6f0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(139, 69, 19, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(160, 82, 45, 0.05) 0%, transparent 50%);
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Variables CSS globales - Tema Rústico */
+:root {
+  /* Colores principales rústicos */
+  --primary-color: #8b4513; /* Marrón silla de montar */
+  --secondary-color: #a0522d; /* Marrón siena */
+  --accent-color: #d2691e; /* Chocolate */
+  --accent-gold: #daa520; /* Dorado rústico */
+  
+  /* Colores de tierra */
+  --earth-brown: #654321;
+  --warm-beige: #f5e6d3;
+  --cream: #faf0e6;
+  --tan: #d2b48c;
+  --bark: #5d4037;
+  
+  /* Colores de texto */
+  --text-dark: #2d1810;
+  --text-medium: #5d4037;
+  --text-light: #8d6e63;
+  --text-cream: #f5e6d3;
+  
+  /* Fondos */
+  --bg-light: #faf6f0;
+  --bg-warm: #f5e6d3;
+  --bg-dark: #2d1810;
+  --bg-wood: #8b4513;
+  
+  /* Sombras y efectos */
+  --shadow-soft: 0 4px 20px rgba(139, 69, 19, 0.15);
+  --shadow-medium: 0 6px 30px rgba(139, 69, 19, 0.25);
+  --shadow-strong: 0 8px 40px rgba(139, 69, 19, 0.35);
+  --border-radius: 12px;
+  --border-radius-large: 20px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Bordes rústicos */
+  --border-wood: 2px solid #8b4513;
+  --border-cream: 2px solid #f5e6d3;
+  --border-tan: 2px solid #d2b48c;
+}
+
+/* Estilos para scrollbar personalizada rústica */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-warm);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+  border-radius: 6px;
+  border: 2px solid var(--bg-warm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--earth-brown), var(--primary-color));
+}
+
+/* Efectos de textura rústica */
+.rustic-texture {
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(139, 69, 19, 0.03) 2px,
+      rgba(139, 69, 19, 0.03) 4px
+    );
+}
+
+.wood-grain {
+  background-image: 
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(139, 69, 19, 0.1) 20%,
+      rgba(139, 69, 19, 0.2) 50%,
+      rgba(139, 69, 19, 0.1) 80%,
+      transparent 100%
+    );
+}
+
+/* Tipografía rústica */
+.rustic-title {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
+  letter-spacing: 1px;
+}
+
+.rustic-text {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+/* Bordes rústicos */
+.rustic-border {
+  border: var(--border-wood);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.rustic-border-thick {
+  border: 3px solid var(--primary-color);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow-medium);
+} 

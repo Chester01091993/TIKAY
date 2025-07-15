@@ -1,0 +1,225 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(245, 230, 211, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: var(--border-wood);
+  transition: var(--transition);
+  box-shadow: var(--shadow-soft);
+}
+
+.header.scrolled {
+  background: rgba(245, 230, 211, 0.98);
+  box-shadow: var(--shadow-medium);
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.headerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  color: var(--text-dark);
+  text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.2);
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+}
+
+.logo:hover img {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-medium);
+}
+
+.logo span {
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navList button {
+  background: none;
+  border: none;
+  color: var(--text-dark);
+  font-family: 'Georgia', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  position: relative;
+  text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.1);
+}
+
+.navList button::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-gold));
+  transition: var(--transition);
+  transform: translateX(-50%);
+  border-radius: 1px;
+}
+
+.navList button:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
+}
+
+.navList button:hover::before {
+  width: 80%;
+}
+
+.headerControls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.mobileMenuButton {
+  display: none;
+  background: var(--primary-color);
+  color: var(--text-cream);
+  border: var(--border-wood);
+  border-radius: var(--border-radius);
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.mobileMenuButton:hover {
+  background: var(--earth-brown);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .headerContainer {
+    height: 70px;
+  }
+
+  .logo span {
+    font-size: 1.2rem;
+  }
+
+  .logo img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .nav {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(245, 230, 211, 0.98);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-bottom: var(--border-wood);
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+  }
+
+  .nav.mobileOpen {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navList {
+    flex-direction: column;
+    gap: 0;
+    padding: 20px;
+  }
+
+  .navList button {
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    border-bottom: 1px solid rgba(139, 69, 19, 0.1);
+    font-size: 1.2rem;
+  }
+
+  .navList button:last-child {
+    border-bottom: none;
+  }
+
+  .navList button::before {
+    display: none;
+  }
+
+  .navList button:hover {
+    background: rgba(139, 69, 19, 0.1);
+    border-radius: var(--border-radius);
+  }
+
+  .mobileMenuButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .headerContainer {
+    height: 65px;
+    padding: 0 15px;
+  }
+
+  .logo span {
+    font-size: 1.1rem;
+  }
+
+  .logo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav {
+    top: 65px;
+  }
+} 
